@@ -1,5 +1,3 @@
-/* TEST */
-
 :root {
   --purple: linear-gradient(rgba(213, 186, 242, 0.4), rgb(107, 72, 144));
   --blue: linear-gradient(rgba(185, 222, 226, 0.4), rgb(133, 185, 192));
@@ -15,7 +13,7 @@
 
 .hidden {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(-40px);
 }
 .fade-in {
   opacity: 1;
@@ -23,9 +21,19 @@
   transition: opacity 0.4s ease-out, transform 0.5s ease-out;
 }
 
+.archivo-regular {
+  font-family: "Archivo", serif;
+  font-optical-sizing: auto;
+  font-weight: 150;
+  font-style: normal;
+  font-variation-settings:"wdth" 100;
+}
+
+
 body {
   font-family: Arial, sans-serif;
   transition: 0.3s;
+  font-family: 'Archivo';
 }
 
 .container {
@@ -53,7 +61,6 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  font-weight: bold;
 }
 
 h1 {
@@ -95,6 +102,14 @@ body.dark-mode #darkModeToggle {
   border: 2px solid black;
 }
 
+body.dark-mode #darkModeToggle:hover {
+  background-color: rgb(33, 33, 33);
+}
+
+body.dark-mode #darkModeToggle:active {
+  background-color: rgb(148, 93, 225);
+}
+
 body.dark-mode {
   background-color: black;
   color: white;
@@ -118,7 +133,6 @@ body.dark-mode {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-weight: bold;
   color: white;
   transition: 0.3s;
 
@@ -127,11 +141,22 @@ body.dark-mode {
 .sidebar .box:hover {
   opacity: 50%;
   transition: 0.3s;
+  color: black;
 }
 
 .content {
   grid-area: content;
-  background: white;
+  background-color: rgba(0, 0, 0, 0.072);
+}
+
+body.dark-mode .content {
+  background-color: rgba(255, 255, 255, 0.161);
+}
+
+#container3D {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .rightbar {
@@ -149,7 +174,7 @@ body.dark-mode {
 /* TABLET ! */
 @media (max-width: 768px) and (min-width: 480px){
   .container {
-      grid-template-rows: auto 280px auto auto auto;
+      grid-template-rows: auto 200px 400px auto auto;
       grid-template-columns: 1fr;
       grid-template-areas:
           "header"
