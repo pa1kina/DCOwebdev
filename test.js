@@ -42,7 +42,7 @@ loader.load(
     scene.add(object);
     object.rotation.y = Math.PI;
     object.scale.set(0.4, 0.4, 0.4);
-    object.position.set(0, -80, 0);
+    object.position.set(0, 0, 0);
 
   },
   function (xhr) {
